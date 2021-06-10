@@ -75,8 +75,7 @@ RUN git clone https://github.com/deepmipt/DeepPavlov.git && \
     python setup.py develop && \
     python -c 'import deeppavlov.models' && \
     pip install -r deeppavlov/requirements/tf-gpu.txt && \
-    rm -rf /root/.cache
-    
+    rm -rf /root/.cache && \
     PATH=/venv/$CONFIG/bin:$PATH; \
     python -m deeppavlov install $CONFIG && \
     mkdir /venv/$CONFIG && \
