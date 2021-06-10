@@ -76,7 +76,7 @@ RUN git clone https://github.com/deepmipt/DeepPavlov.git && \
     pip install -r deeppavlov/requirements/tf-gpu.txt && \
     rm -rf /root/.cache
 
-CMD if [ ! -z $COMMIT ]; then \
+RUN if [ ! -z $COMMIT ]; then \
         cd /base/DeepPavlov && \
         git fetch --all --tags --prune && \
         git checkout $COMMIT && \
@@ -92,5 +92,4 @@ CMD if [ ! -z $COMMIT ]; then \
             cp -R /base/venv/* /venv/$CONFIG && \
             sed -i "\|VIRTUAL_ENV=|s|/base||g" "/venv/"$CONFIG"/bin/activate"; \
         fi; \
-    fi && \
-    python -m deeppavlov riseapi $CONFIG -p 5000 -d
+    fi 
