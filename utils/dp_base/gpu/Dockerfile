@@ -80,5 +80,5 @@ RUN git clone https://github.com/deepmipt/DeepPavlov.git && \
     python -m deeppavlov install $CONFIG && \
     mkdir /venv/$CONFIG && \
     cp -R /base/venv/* /venv/$CONFIG && \
-    sed -i "\|VIRTUAL_ENV=|s|/base||g" "/venv/"$CONFIG"/bin/activate"; \
+    sed -i "\|VIRTUAL_ENV=|s|/base||g" "/venv/"$CONFIG"/bin/activate"; 
  
