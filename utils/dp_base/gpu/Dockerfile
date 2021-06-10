@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARG NVIDIA_BASE_IMAGE
+ARG NVIDIA_BASE_IMAGE=nvidia/cuda:10.0-devel-ubuntu16.04
 FROM $NVIDIA_BASE_IMAGE
 
 ARG COMMIT=master
-ARG CUDNN_VERSION
-ARG PYTHON_VERSION
+ARG CUDNN_VERSION=7.6.2.24
+ARG PYTHON_VERSION=3.7.4
 ARG CONFIG=ner_ontonotes_bert_mult
 
 EXPOSE 5000
